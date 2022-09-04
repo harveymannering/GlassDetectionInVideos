@@ -15,6 +15,14 @@ Using the propagation-based techniques, we can convert GSDNet [^1] into a video 
 ## Active Learning
 In this portion of the project we aim to fine tune the baseline GSDNet4Video model already developed using active learning.  We draw heavily on the framework used in PixelPick [^3] which can increase segmentation performance by training on just a pixel labels per image.  We also explore a new query strategy based on flicker between frames as a mean of improving temporal stability.  Flicker can be defined an object changing classification from one frame to the next and can be seen as type of temporal uncertainty.  While there is evidence to suggest that training on flickering can effectively reduce the labelling burden, our findings are not conclusive. 
 
+## Results
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SYh0NOeJ81w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZS90ZS_6w4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I7SNgZywqvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [^1]: J. Lin, Z. He, and R. W. Lau. Rich context aggregation with reflection prior for glass surface detection. - Project Page : https://jiaying.link/cvpr2021-gsd/
 [^2]: V. Bazarevsky and A. Tkachenka. Mobile real-time video segmentation. - URL : https://ai.googleblog.com/2018/03/mobile-real-time-video-segmentation.html
 [^3]: G. Shin, W. Xie, and S. Albanie. All you need are a few pixels: semantic segmentation with pixelpick. - GitHub : https://github.com/NoelShin/PixelPick
