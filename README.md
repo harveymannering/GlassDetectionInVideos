@@ -1,10 +1,10 @@
-# GlassDetectionInVideos
+# Glass Detection in Videos
 
 MSc Project for Computer Graphics, Vision, and Imaging at UCL by Harvey Mannering
 
 ## Overview
 
-This project aims to extend the glass detection model presented by Jiaying Lin et al. [^1] in to video.  We call this network GSDNet4Video.  This is done primaries using techniques found in Google's "Mobile Real-time Video Segmentation" blog[^2].  This repo also explores methods for fine tuning GSDNet4Video using active learning.  
+This project aims to extend the glass detection model presented by Jiaying Lin et al. [^1] in to video.  We call this network GSDNet4Video.  This is done mainly using techniques found in Google's "Mobile Real-time Video Segmentation" blog[^2].  This repo also explores methods for fine tuning GSDNet4Video using active learning.  
 
 ## GSDNet4Video
 
