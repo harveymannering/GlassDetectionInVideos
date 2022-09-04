@@ -17,11 +17,26 @@ In this portion of the project we aim to fine tune the baseline GSDNet4Video mod
 
 ## Results
 
+#### GSDNet vs. GSDNet4Video
+
+Shown is a comparison of GSDNet as presented by Jiaying Lin et al. [^1] and our own modified version which uses propagation-based techniques to improves temporal stability.  Note that both these models were trained from scratch on a restricted training dataset (2710 instead of all  3202 training images) and that the ResNeXt-101 backbone has been replaced with ResNet-18.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/SYh0NOeJ81w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#### Baseline vs. Fine Tuned (trained on all pixels)
+
+This video shows a comparison between the our baseline GSDNet4Video neural network and a fine tuned version of the same network.   The fine tuning is done using all pixels in synthetically generated videos.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZS90ZS_6w4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+#### Baseline vs. Fine Tuned (trained on only flickering pixels)
+
+This video shows a comparison between the our baseline GSDNet4Video neural network and a fine tuned version of the same network.   We fine tune by training only on flickering pixels that have been detected in synthetically generated videos.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/I7SNgZywqvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
 
 [^1]: J. Lin, Z. He, and R. W. Lau. Rich context aggregation with reflection prior for glass surface detection. - Project Page : https://jiaying.link/cvpr2021-gsd/
 [^2]: V. Bazarevsky and A. Tkachenka. Mobile real-time video segmentation. - URL : https://ai.googleblog.com/2018/03/mobile-real-time-video-segmentation.html
