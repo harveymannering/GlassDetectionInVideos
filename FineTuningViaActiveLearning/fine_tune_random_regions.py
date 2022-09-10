@@ -1,25 +1,14 @@
 from cmath import nan
-from matplotlib.offsetbox import AnchoredOffsetbox, TextArea, DrawingArea, HPacker, VPacker, OffsetImage
-import matplotlib.patches as mpatches
 import numpy as np
 import cv2
 from torch.autograd import Variable
-import io
 import torch
 from model18 import GlassNetMod
 from loss import ReflectionLoss
-from dataset import PreProcessRGDMImage, Tensor2Img
 from dataset import AugmentedGSD, PanningAugmentedGSD
-import matplotlib.pyplot as plt
-from skimage import transform
-import os
 import csv
 import torch.optim as optim
-import torch.nn as nn
-import pandas as pd
 import warnings
-from os.path import exists
-import time
 import sys
 from loss import lovasz_hinge
 from torch.utils.data import DataLoader

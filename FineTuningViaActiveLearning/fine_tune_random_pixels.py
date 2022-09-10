@@ -82,7 +82,6 @@ for e in range(epochs):
         # Get data
         img1 = Variable(data[0])
         mask1 = Variable(data[1])
-        ref_gt1 = Variable(data[2])
         img2 = Variable(data[3])
         mask2 = Variable(data[4])
         img3 = Variable(data[6])
@@ -134,7 +133,6 @@ for e in range(epochs):
         # Calculte loss for these GSD dataset pixels
         gsd_ignore = gsd_ignore.to(device)
         gsd_ground_truth = gsd_ground_truth.to(device)
-        ref_gt2 = ref_gt2.to(device)
         mask2 = mask2.to(device)
         gsd_loss = lovasz_hinge(d0_img2, gsd_ground_truth.float(), True, gsd_ignore.float())
         gsd_loss += lovasz_hinge(d1_img2, gsd_ground_truth.float(), True, gsd_ignore.float())
@@ -186,7 +184,6 @@ for e in range(epochs):
         # Calculte loss for these GSD dataset pixels
         gsd_ignore2 = gsd_ignore2.to(device)
         gsd_ground_truth2 = gsd_ground_truth2.to(device)
-        ref_gt3 = ref_gt3.to(device)
         mask3 = mask3.to(device)
         gsd_loss = lovasz_hinge(d0_img3, gsd_ground_truth2.float(), True, gsd_ignore2.float())
         gsd_loss += lovasz_hinge(d1_img3, gsd_ground_truth2.float(), True, gsd_ignore2.float())
