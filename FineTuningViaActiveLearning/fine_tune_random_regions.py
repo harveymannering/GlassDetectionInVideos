@@ -432,7 +432,7 @@ for e in range(epochs):
     # Save loss for this epoch into a csv file
     fi = open('loss_history_flicker_random.csv', 'a')
     writer = csv.writer(fi)
-    writer.writerow([str(e), str(total_loss_ft / (ft_count * 2)), str(ft_count), str(query_selection_count), str(total_loss_baseline / baseline_count), str(np.sum(problem_database))])
+    writer.writerow([str(e), str(total_loss_ft / (ft_count * 2)), str(ft_count), str(total_loss_baseline / baseline_count), str(np.sum(problem_database))])
     fi.close()
 
     # Save the model parameters every 2 epochs

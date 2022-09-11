@@ -171,7 +171,6 @@ for e in range(epochs):
     total_loss_baseline = 0
     baseline_count = 0
     total_val_loss = 0
-    query_selection_count = 0
 
     ###############
     # FINE TUNING #
@@ -431,7 +430,7 @@ for e in range(epochs):
     # Save loss for this epoch into a csv file
     fi = open('loss_history_5_pixels.csv', 'a')
     writer = csv.writer(fi)
-    writer.writerow([str(e), str(total_loss_ft / (ft_count * 2)), str(ft_count), str(query_selection_count), str(total_loss_baseline / baseline_count), str(np.sum(problem_database))])
+    writer.writerow([str(e), str(total_loss_ft / (ft_count * 2)), str(ft_count), str(total_loss_baseline / baseline_count), str(np.sum(problem_database))])
     fi.close()
 
     # Save the model parameters every 2 epochs

@@ -302,7 +302,7 @@ for e in range(epochs):
 
     fi = open('loss_history_5_pixels_random.csv', 'a')
     writer = csv.writer(fi)
-    writer.writerow([str(e), str(total_loss_ft / (ft_count * 2)), str(np.sum(problem_database))])
+    writer.writerow([str(e), str(total_loss_ft / (ft_count * 2)), str(ft_count), str(total_loss_baseline / baseline_count), str(np.sum(problem_database))])
     fi.close()
 
     # Save the model parameters every 2 epochs
