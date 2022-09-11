@@ -241,7 +241,7 @@ for e in range(epochs):
         debugLog("Backward pass")
 
         # Calculate loss
-        total_loss = total_loss + loss.item()  
+        total_val_loss = total_val_loss + loss.item()  
         if (baseline_count % 100 == 0):
             print("Epoch: " + str(e) + ",Iteration: " + str(baseline_count) + ", Loss : " + str(loss.item()) + ", Transformations : " + str(transf))
         baseline_count += 1
@@ -302,7 +302,7 @@ for e in range(epochs):
 
     fi = open('loss_history_5_pixels_random.csv', 'a')
     writer = csv.writer(fi)
-    writer.writerow([str(e), str(total_loss_ft / (ft_count * 2)), str(ft_count), str(total_loss / baseline_count), str(np.sum(problem_database))])
+    writer.writerow([str(e), str(total_loss_ft / (ft_count * 2)), str(np.sum(problem_database))])
     fi.close()
 
     # Save the model parameters every 2 epochs
