@@ -1,10 +1,14 @@
 # Glass Detection in Videos
 
-MSc Project for Computer Graphics, Vision, and Imaging at UCL by Harvey Mannering
+MSc Project for Computer Graphics, Vision, and Imaging at UCL
 
 ## Overview
 
-This project aims to extend the glass detection model presented by Jiaying Lin et al. [^1] in to video.  We call this network GSDNet4Video.  This is done mainly using techniques found in Google's "Mobile Real-time Video Segmentation" blog[^2].  This repo also explores methods for fine tuning GSDNet4Video using active learning.  
+This project aims to extend the glass detection model presented by Jiaying Lin et al. [^1] in to video.  We call this network GSDNet4Video.  This is done mainly using techniques found in Google's "Mobile Real-time Video Segmentation" blog[^2].  This repo also explores methods for fine tuning GSDNet4Video using active learning. We use code from the following codebases:
+- https://github.com/NoelShin/PixelPick
+- https://jiaying.link/cvpr2021-gsd/
+- https://github.com/kshitijkumbar/LearningBasedMethods/blob/45a031df5c1e2fd7f0c6f377c1265f3540736be2/resNet/resnet.py
+- https://github.com/bermanmaxim/LovaszSoftmax/blob/master/pytorch/lovasz_losses.py
 
 ## GSDNet4Video
 
@@ -15,6 +19,33 @@ Using the propagation-based techniques, we can convert GSDNet [^1] into a video 
 ## Active Learning
 In this portion of the project we aim to fine tune the baseline GSDNet4Video model already developed using active learning.  We draw heavily on the framework used in PixelPick [^3] which can increase segmentation performance by training on just a pixel labels per image.  We also explore a new query strategy based on flicker between frames as a mean of improving temporal stability.  Flicker can be defined an object changing classification from one frame to the next and can be seen as type of temporal uncertainty.  While there is evidence to suggest that training on flickering can effectively reduce the labelling burden, our findings are not conclusive. 
 
+## Code
+
+Before running the files here, you should download the GSD dataset.  This can be found at https://jiaying.link/cvpr2021-gsd/.  To train our baseline, run the `train_model.py` in the GSDNet4Video directory.  This file takes the path to the directory containing your GSD dataset as an arugment.  Run this file like so
+
+```
+python3 train_model.py $PATH_TO_GSD_DATASET$
+```
+
+To train the three channel variant, repeat this process in the GSDNet directory.  Five different fine tuning procedures are found in FineTuningViaActiveLearning directory.  These files will all start with `fine_tune_`.  They will also take the GSD dataset's path as an argument.  These files would be run like so
+
+```
+python3 fine_tune_all_pixels.py $PATH_TO_GSD_DATASET$
+
+python3 fine_tune_flickering_pixels.py  $PATH_TO_GSD_DATASET$
+
+python3 fine_tune_flickering_regions.py $PATH_TO_GSD_DATASET$
+
+python3 fine_tune_random_pixels.py $PATH_TO_GSD_DATASET$
+
+python3 fine_tune_random_regions.py $PATH_TO_GSD_DATASET$
+```
+
+Finally, our customized version of the PixelPick GUI can be run simply with
+
+```
+python3 pixel_pick_ui.py
+```
 ## Results
 
 #### GSDNet vs. GSDNet4Video
