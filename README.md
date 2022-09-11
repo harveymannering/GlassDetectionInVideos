@@ -1,6 +1,6 @@
 # Glass Detection in Videos
 
-MSc Project for Computer Graphics, Vision, and Imaging at UCL
+MSc Project for Computer Graphics, Vision, and Imaging at UCL by Harvey Mannering
 
 ## Overview
 
