@@ -64,7 +64,7 @@ This video shows a comparison between the our baseline GSDNet4Video neural netwo
 
 This video shows a comparison between the our baseline GSDNet4Video neural network and a fine tuned version of the same network.   We fine tune by training only on flickering pixels that have been detected in synthetically generated videos.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I7SNgZywqvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UCVzW0wkBcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
